@@ -1,5 +1,7 @@
 package javaStudy;
 
+import java.util.Arrays;
+
 public class MethodTwoReturn {
 	
 	public static int[] testMethod() {
@@ -21,6 +23,9 @@ public class MethodTwoReturn {
 		System.out.println(">>>" + result);
 		System.out.println(">>>" + result[0]);
 		System.out.println(">>>" + result[1]);
+		System.out.println(">>>" + result[0] + result[1]);
+		System.out.println(Arrays.toString(result));
+		
 		
 		
 	}//main
