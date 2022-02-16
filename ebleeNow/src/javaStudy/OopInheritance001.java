@@ -16,16 +16,66 @@ package javaStudy;
  * 부모 클래스의 멤버필드, 메서드는 상속이 가능하나 생성자는 상속되지 않는다.
  * 부모클래스의 접근제한자가 private인 경우에는 자식클래스가 상속 받았다고 해도 접근이 불가능하다.
  * */
-
-class Person{}
-class Hero{}
+/* 오버로딩 : 
+ * 오버라이딩 : 새로운 용도로 재정의하여 변경하여 사용
+*/
+class Person{
+	//field
+	int gender;
+	int power;
+	
+	//constructor
+	Person(){
+		this.gender = 1;
+		this.power = 100;
+	}
+	
+	//method
+	void walk() {
+		System.out.println("걸어가고잇어요~");
+	}//walk
+	
+}//person
+class Hero extends Person{
+	//field
+	String name;
+	int age;
+	
+	//constructor
+	Hero(){}
+	Hero(String n, int a){
+		this.name = n;
+		this.age = a;
+	}
+	
+	//method : 부모클래스에서 상송받은 메소드를 변경하여 사용할 수 있다.(오버라이드)
+	void walk() {
+		System.out.println("2배로빨리 걸어가고잇어요~");
+	}
+	void eat() {
+		System.out.println("밥먹고잇어요~");
+	}
+	void displayPerson() {
+		System.out.println("name : " + name + ", age : " + age+", gender" + gender+", power" + power);
+	}
+}//hero
 class Vilain{}
 
 public class OopInheritance001 {
 	
 	public static void main(String[] args) {
 		
+		//1. 객체생성
+		Person p1 = new Person();
+		p1.walk();
+//		p1.eat();
 		
+		//2. 상속을 통한 객체 생성
+		Hero h1 = new Hero("a", 20);
+		System.out.println(h1.name);
+		System.out.println(h1.age);
+		System.out.println(h1.gender);//부모클래스변수
+		System.out.println(h1.power);//부모클래스변수
 		
 	}//main
 
