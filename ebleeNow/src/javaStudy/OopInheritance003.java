@@ -1,4 +1,5 @@
 package javaStudy;
+
 /* 오버라이딩
  * 오버로딩
  * */
@@ -6,7 +7,7 @@ package javaStudy;
  * 
  * */
 
-class Person2{
+class PPerson2{
 	//Field
 	private String name;
 	private int age;
@@ -14,12 +15,12 @@ class Person2{
 	private int weight;
 	
 	//constructor
-	Person2(){}
-	Person2(String n, int a, int h, int w){
-		this.name = n;
-		this.age = a;
-		this.height = h;
-		this.weight = w;
+	PPerson2(){}
+	PPerson2(String name, int age, int height, int weight){
+		this.name = name;
+		this.age = age;
+		this.height = height;
+		this.weight = weight;
 	}
 	
 	//method
@@ -40,9 +41,17 @@ class Person2{
 		System.out.println("이동중 >>> ");
 	}
 	
+	//printPerson(){}
+	public void printPerson() {
+		System.out.println("악당 이름 >>> " + getName());
+		System.out.println("악당 나이 >>> " + getAge());
+		System.out.println("악당   키 >>> " + getHeight());
+		System.out.println("악당 체중 >>> " + getWeight());
+	}
+	
 }//Person2
 
-class Villain2 extends Person {
+class VVillain2 extends PPerson2 {
 	
 	//field
 	private String unique_key;
@@ -50,6 +59,17 @@ class Villain2 extends Person {
 	private double power;
 	
 	//Constructor
+	VVillain2(){}
+	VVillain2(String name, int age, int height, int weight, String unique_key, int weapon, int power){
+		//String name, int age, int height, int weapon : 부모클래스의 인자
+		//String unique_key, int weapon, int power : 상속받은 자식클래스1의 인자
+		//super();
+//		super(name,  age,  height,  weapon);
+		this.unique_key = unique_key;
+		this.weapon = weapon;
+		this.power = power;
+		
+	}
 	
 	
 	//method
@@ -63,13 +83,14 @@ class Villain2 extends Person {
 	public double getPower() {return power;}
 	
 	
+
 	
 	
 	
 	
 }//Villain2
 
-class Hero2 extends Person{
+class HHero2 extends PPerson{
 	
 	
 }//Hero2
@@ -83,7 +104,7 @@ public class OopInheritance003 {
 		p1.setName("aala");
 		System.out.println(p1.getName());
 		
-
+		
 	}//main
 
 }//class

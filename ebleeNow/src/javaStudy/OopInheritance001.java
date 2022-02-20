@@ -19,13 +19,13 @@ package javaStudy;
 /* 오버로딩 : 
  * 오버라이딩 : 새로운 용도로 재정의하여 변경하여 사용
 */
-class Person{
+class PPerson{
 	//field
 	int gender;
 	int power;
 	
 	//constructor
-	Person(){
+	PPerson(){
 		this.gender = 1;
 		this.power = 100;
 	}
@@ -36,14 +36,14 @@ class Person{
 	}//walk
 	
 }//person
-class Hero extends Person{
+class HHero extends PPerson{
 	//field
 	String name;
 	int age;
 	
 	//constructor
-	Hero(){}
-	Hero(String n, int a){
+	HHero(){}
+	HHero(String n, int a){
 		this.name = n;
 		this.age = a;
 	}
@@ -59,19 +59,19 @@ class Hero extends Person{
 		System.out.println("name : " + name + ", age : " + age+", gender" + gender+", power" + power);
 	}
 }//hero
-class Vilain{}
+class VVilain{}
 
 public class OopInheritance001 {
 	
 	public static void main(String[] args) {
 		
 		//1. 객체생성
-		Person p1 = new Person();
+		PPerson p1 = new PPerson();
 		p1.walk();
 //		p1.eat();
 		
 		//2. 상속을 통한 객체 생성
-		Hero h1 = new Hero("a", 20);
+		HHero h1 = new HHero("a", 20);
 		System.out.println(h1.name);
 		System.out.println(h1.age);
 		System.out.println(h1.gender);//부모클래스변수
