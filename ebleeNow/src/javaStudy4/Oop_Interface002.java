@@ -21,13 +21,62 @@ package javaStudy4;
  * class Students extends Person implements A,B
  * 
  * */
+
+class Person{
+	//field
+	String name;
+	int age;
+	int weight;
+	
+	//constructor
+	Person(){}
+	Person(String name, int age, int weight){
+		
+		this.name = name;
+		this.age  = age;
+		this.weight = weight;
+	}
+	//method
+	void wash() {System.out.println("wash >>> ");}
+	void study() {System.out.println("study >>> ");}
+	void play() {System.out.println("play >>> ");}
+	
+}//person
+
+interface Allowence{ //인터페이스는 추상메소드만 가용 가능
+	abstract void in(int price, String name);
+	abstract void out(int price, String name);
+	
+} 
+interface Train{
+	abstract void train(int training_pay, String name);
+}
+
+class Student extends Person implements Allowence, Train{
+	
+	//field
+
+	//constructor
+	Student(){}
+	Student(String name, int age, int weight){
+		super(name, age, weight);
+	}
+	
+	//method
+	public void in(int price, String name) {System.out.printf(" %s에게서 %d 용돈을 받았습니다. >>> ",name, price);}
+	public void out(int price, String name) {System.out.printf(" %d 금액을 지출했습니다. [지출용도 --> %s] >>> ", price, name);}
+	public void train(int training_pay, String name) {System.out.printf(" [%s --> %d원 입금완료] >>> ", name, training_pay);}
+	
+	
+}//student
+
 public class Oop_Interface002 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
 		//객체생성
-		
+		Student s1 = new Student("홍길동", 20, 85);
 
 		
 		
