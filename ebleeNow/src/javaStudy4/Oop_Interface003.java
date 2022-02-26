@@ -44,6 +44,14 @@ class Person1{
 }//Person1
 
 interface Allowence11{ //인터페이스는 추상메소드만 가용 가능
+	//field
+	
+	//변수는 안되나 상수는 가능 -> 상수ㅗ 지정 public static final 붙여주면 됨
+	//인터페이스 내 모든 멤버 필드(변수) public static final이여야함
+	public static final String aaa = "ko";
+	public static final int bbb = 100;
+	
+	//method
 	abstract void in(int price, String name);
 	abstract void out(int price, String name);
 	
@@ -75,17 +83,23 @@ public class Oop_Interface003 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		//객체생성
+		//1. 객체생성
 		Student1 s1 = new Student1("홍길동", 20, 85);
 
-		//클래스와 인터페이스로부터 상속(Person1)과 구현(Allowence11, Train1)을 한 메서드들 호출하기
+		//2. 클래스와 인터페이스로부터 상속(Person1)과 구현(Allowence11, Train1)을 한 메서드들 호출하기
 		s1.wash();
 		s1.study();
 		s1.play();
 		s1.in(100000, "엄마");
+		s1.out(5000, "lotto");
+		s1.Train1(5000, "lotto");
+		System.out.println();
  
+		//3. 상수필드 사용하기
+		System.out.println(s1.aaa);
+		System.out.println(s1.bbb);
 		
-		System.out.println(">>>>");
+		System.out.println("main >>>>");
 	}//main
 
 }//class
